@@ -1,50 +1,60 @@
 export default function SkillsSection() {
   const skillCategories = [
     {
-      title: "Programming",
+      title: "Languages & Core",
       icon: "fas fa-code",
-      skills: ["Java", "JavaScript", "Python", "R"],
+      skills: ["Java", "JavaScript", "Python", "R", "TypeScript", "SQL"],
     },
     {
-      title: "Frontend",
-      icon: "fas fa-paint-brush",
-      skills: ["HTML5", "CSS3", "React JS"],
+      title: "Frontend Engineering",
+      icon: "fas fa-laptop-code",
+      skills: ["React.js", "Next.js", "HTML5", "CSS3", "Tailwind CSS"],
     },
     {
-      title: "Backend",
+      title: "Backend & Cloud",
       icon: "fas fa-server",
-      skills: ["Django", "Express JS", "Node JS"],
+      skills: ["Node.js", "Express.js", "Django", "Firebase", "REST APIs"],
     },
     {
-      title: "Databases",
+      title: "Databases & Storage",
       icon: "fas fa-database",
-      skills: ["MySQL", "MongoDB"],
+      skills: ["MongoDB", "MySQL", "PostgreSQL"],
     },
     {
-      title: "Tools & Software",
+      title: "Data Science & AI",
+      icon: "fas fa-brain",
+      skills: ["Pandas", "Matplotlib", "PowerBI", "Llama 3.1", "Generative AI"],
+    },
+    {
+      title: "Tools & Workflow",
       icon: "fas fa-tools",
-      skills: ["PowerBI", "VS Code", "PyCharm", "Git/GitHub"],
-    },
-    {
-      title: "Coursework",
-      icon: "fas fa-book",
-      skills: ["DSA", "OS", "DBMS", "CN"],
+      skills: ["VS Code", "PyCharm", "Git & GitHub", "Vercel", "After Effects"],
     },
   ]
 
   return (
-    <section id="skills" className="skills">
+    <section id="skills" className="bg-grid-pattern">
       <div className="container">
-        <h2 className="section-title">Technical Skills</h2>
-        <div className="skills-grid">
+        <div className="section-tag">
+          <span>// Tech Stack</span>
+        </div>
+        <h2 className="section-title-large">
+          Technical Skills & <span style={{ color: "var(--brand-accent)" }}>Capabilities.</span>
+        </h2>
+        <p className="section-subtitle">
+          Technologies, frameworks, and tools I use to build scalable web applications and intelligent data solutions.
+        </p>
+
+        <div className="skills-category-grid">
           {skillCategories.map((category, index) => (
-            <div key={index} className="skill-category">
-              <h3>
-                <i className={category.icon}></i> {category.title}
-              </h3>
-              <div className="skill-items">
+            <div key={index} className="skill-category-card">
+              <div className="skill-category-header">
+                <i className={category.icon}></i>
+                <span>{category.title}</span>
+              </div>
+              <div className="skill-tags-group">
                 {category.skills.map((skill, skillIndex) => (
-                  <span key={skillIndex} className="skill-tag">
+                  <span key={skillIndex} className="skill-chip">
                     {skill}
                   </span>
                 ))}

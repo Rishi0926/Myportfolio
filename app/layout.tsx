@@ -1,26 +1,32 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Poppins } from "next/font/google"
+import { Plus_Jakarta_Sans, JetBrains_Mono } from "next/font/google"
 import "./globals.css"
 
-const poppins = Poppins({
+const sansFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-sans",
+})
+
+const monoFont = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
+  variable: "--font-mono",
 })
 
 export const metadata: Metadata = {
-  title: "Rishikesh Reddy - Portfolio",
+  title: "Chintha Kuntla Rishikesh Reddy | AI & Full-Stack Developer",
   description:
-    "Full Stack Developer & Data Science Student passionate about AI development and Generative AI technologies.",
-  keywords: "Full Stack Developer, Data Science, AI, React, Node.js, Python, Portfolio",
+    "AI Platform Developer & Data Science Specialist building high-performance, broadcast-quality software and multilingual AI products.",
+  keywords: "Chintha Kuntla Rishikesh Reddy, Full Stack Developer, Data Science, AI, FluxoCut, LinkrCap, React, Node.js, Python, Portfolio",
   authors: [{ name: "Chintha Kuntla Rishikesh Reddy" }],
   openGraph: {
-    title: "Chintha Kuntla Rishikesh Reddy - Portfolio",
+    title: "Chintha Kuntla Rishikesh Reddy | AI & Full-Stack Developer",
     description:
-      "Full Stack Developer & Data Science Student passionate about AI development and Generative AI technologies.",
+      "AI Platform Developer & Data Science Specialist building high-performance, broadcast-quality software and multilingual AI products.",
     type: "website",
   },
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -29,17 +35,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${sansFont.variable} ${monoFont.variable} scroll-smooth`}>
       <head>
         <link
           rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-          integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+          integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
           crossOrigin="anonymous"
           referrerPolicy="no-referrer"
         />
       </head>
-      <body className={poppins.className}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   )
 }

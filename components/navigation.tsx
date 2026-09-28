@@ -15,7 +15,7 @@ export default function Navigation() {
         const sectionTop = section.offsetTop
         const sectionId = section.getAttribute("id")
 
-        if (scrollY >= sectionTop - 200 && sectionId) {
+        if (scrollY >= sectionTop - 250 && sectionId) {
           setActiveSection(sectionId)
         }
       })
@@ -33,29 +33,66 @@ export default function Navigation() {
     }
   }
 
+  const navItems = [
+    { id: "home", label: "Home" },
+    { id: "about", label: "About" },
+    { id: "experience", label: "Experience" },
+    { id: "skills", label: "Skills" },
+    { id: "projects", label: "Projects" },
+    { id: "education", label: "Education" },
+    { id: "achievements", label: "Achievements" },
+  ]
+
   return (
-    <nav className="navbar">
-      <div className="nav-container">
-        <div className="nav-logo">
-          <span>Rishikesh</span>
-        </div>
-        <div className={`nav-menu ${isMenuOpen ? "active" : ""}`}>
-          {["home", "about", "experience", "skills", "projects", "education", "contact"].map((section) => (
+    <header className="navbar-wrapper">
+      <nav className="navbar-pill">
+        <a href="#home" className="nav-logo-text">
+          Rishikesh<span className="nav-logo-accent">.</span>
+        </a>
+
+        <div className="nav-links-desktop">
+          {navItems.map((item) => (
             <button
-              key={section}
-              onClick={() => handleNavClick(section)}
-              className={`nav-link ${activeSection === section ? "active" : ""}`}
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={`nav-item-btn ${activeSection === item.id ? "active" : ""}`}
             >
-              {section.charAt(0).toUpperCase() + section.slice(1)}
+              {item.label}
             </button>
           ))}
         </div>
-        <div className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <span></span>
-          <span></span>
-          <span></span>
+
+        <div style={{ display: "flex", alignItems: "center", gap: "0.75rem" }}>
+          <button
+            onClick={() => handleNavClick("contact")}
+            className="nav-cta-btn"
+          >
+            Contact Me <i className="fas fa-arrow-right" style={{ fontSize: "0.75rem" }}></i>
+          </button>
+
+          <button
+            className="mobile-menu-toggle"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle navigation menu"
+          >
+            <i className={isMenuOpen ? "fas fa-times" : "fas fa-bars"}></i>
+          </button>
         </div>
-      </div>
-    </nav>
+      </nav>
+
+      {isMenuOpen && (
+        <div className="mobile-nav-drawer">
+          {navItems.concat([{ id: "contact", label: "Contact" }]).map((item) => (
+            <button
+              key={item.id}
+              onClick={() => handleNavClick(item.id)}
+              className={activeSection === item.id ? "active" : ""}
+            >
+              {item.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </header>
   )
 }

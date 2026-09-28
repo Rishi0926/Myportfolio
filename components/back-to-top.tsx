@@ -7,7 +7,7 @@ export default function BackToTop() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 300) {
+      if (window.scrollY > 400) {
         setIsVisible(true)
       } else {
         setIsVisible(false)
@@ -25,8 +25,14 @@ export default function BackToTop() {
     })
   }
 
+  if (!isVisible) return null
+
   return (
-    <button className={`back-to-top ${isVisible ? "visible" : ""}`} onClick={scrollToTop}>
+    <button
+      className="back-to-top-floating"
+      onClick={scrollToTop}
+      aria-label="Back to top"
+    >
       <i className="fas fa-arrow-up"></i>
     </button>
   )
