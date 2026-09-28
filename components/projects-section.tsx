@@ -3,11 +3,28 @@ import Image from "next/image"
 export default function ProjectsSection() {
   const projects = [
     {
+      title: "FluxoCut — AI-Powered Captioning & Localization Platform",
+      description:
+        "Built a captioning platform generating word-timed, broadcast-quality captions across 80+ languages, including 14 Indian and 68 international languages. Integrated translation and transliteration workflows with editor-ready templates for After Effects, DaVinci Resolve, and Premiere Pro.",
+      technologies: ["AI", "Multilingual Processing", "After Effects", "DaVinci Resolve", "Premiere Pro"],
+      image: "/images/fluxocut.jpg",
+      liveUrl: "#",
+      githubUrl: "https://github.com/Rishi0926",
+    },
+    {
+      title: "LinkrCap — AI Startup Research & Launch Platform",
+      description:
+        "Built an AI platform that stress-tests startup ideas through deep research and generates investor-ready, fully editable pitch decks. Developed a structured launch roadmap and credit-based usage system to sequence execution and meter AI-powered features.",
+      technologies: ["AI", "Deep Research", "Pitch Deck Generation", "Product Roadmapping"],
+      image: "/images/linkrcap.jpg",
+      liveUrl: "#",
+      githubUrl: "https://github.com/Rishi0926",
+    },
+    {
       title: "MRCET StudentSNAP",
       description:
         "Web application for college faculty to perform CRUD operations on student details with E-Gate pass integration.",
       technologies: ["ReactJS", "NodeJS", "MongoDB", "Firebase"],
-      duration: ,
       image: "/images/mrcet.jpeg",
       liveUrl: "https://studentsnap.vercel.app/",
       githubUrl: "https://github.com/Rishi0926/mrcet-studentsnap",
@@ -17,7 +34,6 @@ export default function ProjectsSection() {
       description:
         "Personal financial management tool with command-line interface for transaction tracking and visualization.",
       technologies: ["Python", "Pandas", "Matplotlib"],
-      duration: "3 Weeks",
       image: "/images/finance.jpg",
       liveUrl: "https://financemaven.vercel.app/",
       githubUrl: "https://github.com/Rishi0926/finance-maven",
@@ -27,7 +43,6 @@ export default function ProjectsSection() {
       description:
         "AI-powered multilingual financial loan advisor with real-time voice interactions supporting 10+ languages.",
       technologies: ["MERN", "Firebase", "Llama 3.1"],
-      duration: "1 Week",
       image: "/images/finassistant.jpg",
       liveUrl: "https://finassist-sage.vercel.app/",
       githubUrl: "https://github.com/Rishi0926/finassist-ai",
@@ -37,7 +52,6 @@ export default function ProjectsSection() {
       description:
         "A modern portfolio builder app that allows users to create stunning portfolios quickly with customizable templates and themes.",
       technologies: ["React", "Next.js", "Tailwind CSS", "Vercel"],
-      duration: "2 Weeks",
       image: "/images/portfolio.jpeg",
       liveUrl: "https://quickfolio-azure.vercel.app/",
       githubUrl: "https://github.com/Rishi0926/quickfolio",
@@ -82,7 +96,6 @@ export default function ProjectsSection() {
                     <span key={techIndex}>{tech}</span>
                   ))}
                 </div>
-                <div className="project-duration">{project.duration}</div>
               </div>
             </div>
           ))}
@@ -91,3 +104,4 @@ export default function ProjectsSection() {
     </section>
   )
 }
+

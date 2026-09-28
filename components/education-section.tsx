@@ -1,7 +1,7 @@
 export default function EducationSection() {
   const educationData = [
     {
-      year: "2022 - Present",
+      year: "2022 - 2026",
       degree: "Bachelor of Technology - CSE Data Science",
       institution: "Malla Reddy College Of Engineering & Technology, Hyderabad",
       grade: "Current CGPA: 8.80",
