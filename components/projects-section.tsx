@@ -7,7 +7,7 @@ export default function ProjectsSection() {
       description:
         "Web application for college faculty to perform CRUD operations on student details with E-Gate pass integration.",
       technologies: ["ReactJS", "NodeJS", "MongoDB", "Firebase"],
-      duration: "8 Weeks",
+      duration: ,
       image: "/images/mrcet.jpeg",
       liveUrl: "https://studentsnap.vercel.app/",
       githubUrl: "https://github.com/Rishi0926/mrcet-studentsnap",
